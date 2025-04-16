@@ -11,4 +11,4 @@ function checkPasscode() {
 
     function scrollToPasscode() {
       document.getElementById("passcode").scrollIntoView({ behavior: "smooth" });
-    }
+}
