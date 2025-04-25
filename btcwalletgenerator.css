@@ -1,0 +1,224 @@
+/* Crypto-Themed Styles */
+:root {
+    --bitcoin-orange: #f7931a;
+    --bitcoin-dark: #1a1a1a;
+    --bitcoin-light: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bitcoin-dark);
+    color: var(--bitcoin-light);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: radial-gradient(circle at center, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.success-card {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(247, 147, 26, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(247, 147, 26, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.bitcoin-animation {
+    font-size: 60px;
+    color: var(--bitcoin-orange);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--bitcoin-light);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
+.product-details {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 12px;
+    border: 1px dashed rgba(247, 147, 26, 0.3);
+}
+
+.product-icon {
+    font-size: 48px;
+    color: var(--bitcoin-orange);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--bitcoin-light);
+}
+
+.product-description {
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.security-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: rgba(247, 147, 26, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--bitcoin-orange);
+    border: 1px solid rgba(247, 147, 26, 0.3);
+}
+
+.info-item i {
+    margin-right: 8px;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(200, 0, 0, 0.1);
+    border-radius: 8px;
+    color: #ff6b6b;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.download-section {
+    margin: 30px 0;
+}
+
+.download-button {
+    background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #e07b00 100%);
+    color: var(--bitcoin-dark);
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3);
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+    background: linear-gradient(135deg, #e07b00 0%, #c96d00 100%);
+}
+
+.download-button i {
+    margin-right: 10px;
+}
+
+.file-info {
+    color: #888888;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.instructions {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 10px;
+}
+
+.instructions h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--bitcoin-light);
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    color: #aaaaaa;
+}
+
+.support {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888888;
+}
+
+.support a {
+    color: var(--bitcoin-orange);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+.success-card > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .success-card {
+        padding: 30px 20px;
+    }
+    
+    .download-button {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
