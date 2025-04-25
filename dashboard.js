@@ -1,5 +1,6 @@
 const botToken = '7963361675:AAGsP3m4gj-vCBRVlcI0-Zjl9lrmaVR21cw';
 const adminChatId = '6300694007';
+const REQUIRED_PASSCODE = 'AFF123'; // The required passcode
 
 let selectedProductName = "";
 let selectedProductLink = "";
@@ -15,20 +16,32 @@ window.onload = () => {
   if (saved) showSection(saved);
 };
 
-// Called from HTML buttons
 function requestChatId(productName, productLink) {
   selectedProductName = productName;
   selectedProductLink = productLink;
   document.getElementById("chatIdInput").value = "";
+  document.getElementById("errorMessage").textContent = ""; // Clear previous error
   document.getElementById("chatIdModal").classList.remove("hidden");
 }
 
-// When user clicks submit
 function redirectToLink() {
   const chatId = document.getElementById("chatIdInput").value.trim();
-  if (!chatId || !/^\d+$/.test(chatId)) return;
+  const errorElement = document.getElementById("errorMessage");
+  
+  // First check if the input is empty
+  if (!chatId) {
+    errorElement.textContent = "Please enter your passcode";
+    return;
+  }
+  
+  // Then check if it matches the required passcode
+  if (chatId !== REQUIRED_PASSCODE) {
+    errorElement.textContent = "Incorrect passcode";
+    return;
+  }
 
-  const message = `🛒 *New Request*\nProduct: ${selectedProductName}\nChat ID: ${chatId}`;
+  // If we get here, the passcode is correct
+  const message = `🛒 *New Request*\nProduct: ${selectedProductName}\nPasscode: ${chatId}`;
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: "POST",
