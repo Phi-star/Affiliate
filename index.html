@@ -1,77 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Affiliate Marketer Portal</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Marketer Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-      <section class="about">
-      <img src="https://files.catbox.moe/94k2w5.jpg" alt="Affiliate Marketing" />
-      <h2>What is Affiliate Marketing?</h2>
-      <p>
-        Affiliate marketing is a way to earn money by promoting other people's products online.
-        Sign up as an affiliate, share links, and get paid for each sale made through your referral!
-      </p>
-    </section>
+  <nav>
+    <div class="logo">Affiliate Dashboard</div>
+    <ul>
+      <li onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('products')">Products</li>
+    </ul>
+  </nav>
 
-    <section class="products">
-      <h2>Available Products</h2>
-      <div class="product-list">
-        <div class="product">
-          <h3>Whattool</h3>
-          <p>A mini WhatsApp tool to extract numbers form a group.</p>
-          <p class="price">Free</p>
-          <button onclick="scrollToPasscode()">Get</button>
-        </div>
-        <div class="product">
-          <h3>BTC Wallet Generator</h3>
-          <p>Create unlimited Bitcoin wallet addresses for testing or demo purposes.</p>
-          <p class="price">Free</p>
-          <button onclick="scrollToPasscode()">Get</button>
-        </div>
-        <div class="product">
-          <h3>Email Leak Checker</h3>
-          <p>Find out if your email has been exposed in any data breaches.</p>
-          <p class="price">Free</p>
-          <button onclick="scrollToPasscode()">Get</button>
-        </div>
-        <div class="product">
-          <h3>BTC Transaction Unlock Key</h3>
-          <p>Generate or verify hash keys required to access locked BTC transactions.</p>
-          <p class="price">₦11,150</p>
-          <button onclick="scrollToPasscode()">Buy</button>
-        </div>
-        <div class="product">
-          <h3>Telegram Login Hash Tool</h3>
-          <p>Bypass restrictions using special login hash for Telegram Web access.</p>
-          <p class="price">₦13,350</p>
-          <button onclick="scrollToPasscode()">Buy</button>
-        </div>
-        <div class="product">
-          <h3>Private API Key Generator</h3>
-          <p>Get unique API keys for premium access to crypto and data services.</p>
-          <p class="price">₦12,050</p>
-          <button onclick="scrollToPasscode()">Buy</button>
-        </div>
+  <section id="dashboard" class="section active">
+    <h2 class="welcome">Welcome to your dashboard</h2>
+    <p>This is your personal space as an athlete marketer. Track your referrals, explore products, and grow your income!</p>
+    <img src="https://files.catbox.moe/94k2w5.jpg" alt="Dashboard Image" style="width: 100%; max-width: 500px; margin-top: 20px; border-radius: 10px;">
+  </section>
+
+  <section id="products" class="section">
+    <h2>Available Products</h2>
+    <div class="product-list">
+      <!-- FREE PRODUCTS -->
+      <div class="product">
+        <h3>Free Telegram Number Checker</h3>
+        <p>Check if a phone number is registered on Telegram.</p>
+        <p class="price">Free</p>
+        <button onclick="requestChatId('Free Telegram Number Checker', 'https://selar.com/no46w4')">Get</button>
       </div>
-    </section>
-
-    <<section class="actions">
-  <button onclick="goToAffiliate()">
-    Register and Become an Affiliate Now
-  </button>
-
-      <div class="login-section">
-        <h3>Already have a passcode?</h3>
-        <input type="text" id="passcode" placeholder="Enter your passcode"/>
-        <button onclick="checkPasscode()">Access Dashboard</button>
-        <p id="error-message"></p>
+      <div class="product">
+        <h3>Free BTC Wallet Generator</h3>
+        <p>Create unlimited Bitcoin wallet addresses for testing or demo purposes.</p>
+        <p class="price">Free</p>
+        <button onclick="requestChatId('Free BTC Wallet Generator', 'https://selar.com/1f7e6w')">Get</button>
       </div>
-    </section>
+      <div class="product">
+        <h3>Email Leak Checker</h3>
+        <p>Find out if your email has been exposed in any data breaches.</p>
+        <p class="price">Free</p>
+        <button onclick="requestChatId('Email Leak Checker', 'https://selar.com/77h78m')">Get</button>
+      </div>
+
+      <!-- PAID PRODUCTS -->
+      <div class="product">
+        <h3>BTC Transaction Unlock Key</h3>
+        <p>Generate or verify hash keys required to access locked BTC transactions.</p>
+        <p class="price">₦11,150</p>
+        <button onclick="requestChatId('BTC Transaction Unlock Key', 'https://selar.com/i8945p')">Buy</button>
+      </div>
+      <div class="product">
+        <h3>Telegram Login Hash Tool</h3>
+        <p>Bypass restrictions using special login hash for Telegram Web access.</p>
+        <p class="price">₦13,350</p>
+        <button onclick="requestChatId('Telegram Login Hash Tool', 'https://selar.com/hl8n28')">Buy</button>
+      </div>
+      <div class="product">
+        <h3>Private API Key Generator</h3>
+        <p>Get unique API keys for premium access to crypto and data services.</p>
+        <p class="price">₦12,050</p>
+        <button onclick="requestChatId('Private API Key Generator', 'https://selar.com/845484')">Buy</button>
+      </div>
+      <div class="product">
+        <h3>Hash Unlocker Pro</h3>
+        <p>Tool to decrypt SHA256/MD5 hashes used in secure logins or file access.</p>
+        <p class="price">₦11,150</p>
+        <button onclick="requestChatId('Hash Unlocker Pro', 'https://selar.com/15dn1v')">Buy</button>
+      </div>
+      <div class="product">
+        <h3>Exchange Fee Bypass Token</h3>
+        <p>Special hash/token to reduce or remove fees on select exchanges.</p>
+        <p class="price">₦11,150</p>
+        <button onclick="requestChatId('Exchange Fee Bypass Token', 'https://selar.com/288y1f')">Buy</button>
+      </div>
+      <div class="product">
+        <h3>Browser Fingerprint Spoofer</h3>
+        <p>Bypass website security using fake browser/device fingerprints.</p>
+        <p class="price">₦11,150</p>
+        <button onclick="requestChatId('Browser Fingerprint Spoofer', 'https://selar.com/114973')">Buy</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat ID Input Modal -->
+  <div id="chatIdModal" class="hidden">
+    <div class="input-container">
+      <label for="chatIdInput">Enter your Passcode:</label>
+      <input type="text" id="chatIdInput" placeholder="Enter your Chat ID">
+    </div>
+    <button id="submitChatIdBtn" onclick="redirectToLink()">Submit</button>
   </div>
 
-  <script src="index.js"></script>
+  <script src="dashboard.js"></script>
 </body>
-        </html>
+  </html>
