@@ -1,0 +1,225 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.success-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.checkmark {
+    width: 80px;
+    height: 80px;
+}
+
+.checkmark-circle-bg {
+    stroke: #10b981;
+    stroke-width: 2;
+}
+
+.checkmark-check {
+    stroke: #10b981;
+    stroke-width: 4;
+    stroke-linecap: round;
+    animation: draw 0.8s ease-in-out forwards;
+}
+
+@keyframes draw {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 100, 0;
+    }
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 16px;
+}
+
+.product-details {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px dashed #cbd5e1;
+}
+
+.product-icon {
+    font-size: 48px;
+    color: #10b981;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.product-description {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.license-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: #ecfdf5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.info-item i {
+    margin-right: 8px;
+}
+
+.download-section {
+    margin: 30px 0;
+}
+
+.download-button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.download-button i {
+    margin-right: 10px;
+}
+
+.file-info {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.instructions {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.instructions h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+.support {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.support a {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+.success-card > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .success-card {
+        padding: 30px 20px;
+    }
+    
+    .download-button {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+  }
