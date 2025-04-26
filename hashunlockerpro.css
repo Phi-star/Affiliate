@@ -1,0 +1,317 @@
+/* Hacking/Decryption Theme */
+:root {
+    --hacker-green: #00ff41;
+    --matrix-dark: #0d0208;
+    --terminal-light: #0fff50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--matrix-dark);
+    color: var(--terminal-light);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: radial-gradient(circle at center, #0d0208 0%, #003b00 100%);
+}
+
+.success-card {
+    background: rgba(13, 2, 8, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.success-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(0, 255, 65, 0) 0%,
+        rgba(0, 255, 65, 0.1) 50%,
+        rgba(0, 255, 65, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: rotate(30deg) translate(-30%, -30%); }
+    100% { transform: rotate(30deg) translate(30%, 30%); }
+}
+
+.header {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.hash-icon {
+    position: relative;
+    font-size: 60px;
+    color: var(--hacker-green);
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hash-symbol {
+    position: absolute;
+    font-size: 80px;
+    font-weight: bold;
+    color: rgba(0, 255, 65, 0.2);
+    z-index: -1;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+.subtitle {
+    color: #00b434;
+    font-size: 16px;
+}
+
+.product-details {
+    margin: 30px 0;
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+.product-description {
+    color: #00b434;
+    margin-bottom: 25px;
+}
+
+.tool-display {
+    margin: 25px 0;
+    position: relative;
+}
+
+.tool-container {
+    background: rgba(0, 20, 8, 0.8);
+    border: 1px solid var(--hacker-green);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    word-break: break-all;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 5px var(--hacker-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--hacker-green);
+    box-shadow: 0 0 10px var(--hacker-green);
+    animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+.copy-button {
+    background: rgba(0, 255, 65, 0.1);
+    color: var(--terminal-light);
+    border: 1px solid var(--hacker-green);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+.copy-button:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.copy-button.copied {
+    background: var(--hacker-green);
+    border-color: var(--hacker-green);
+    color: var(--matrix-dark);
+    text-shadow: none;
+}
+
+.security-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 255, 65, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--terminal-light);
+    border: 1px solid var(--hacker-green);
+    gap: 8px;
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+.instructions {
+    text-align: left;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(0, 20, 8, 0.5);
+    border-radius: 8px;
+    border-left: 3px solid var(--hacker-green);
+}
+
+.instructions h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    color: #00b434;
+}
+
+.action-section {
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.generate-button {
+    background: linear-gradient(135deg, var(--hacker-green), #00b434);
+    color: var(--matrix-dark);
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: none;
+}
+
+.generate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 65, 0.4);
+}
+
+.note {
+    margin-top: 15px;
+    color: #00b434;
+    font-size: 14px;
+}
+
+.note strong {
+    color: var(--hacker-green);
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+.support {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #00b434;
+    position: relative;
+    z-index: 2;
+}
+
+.support a {
+    color: var(--hacker-green);
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.success-card > * {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.success-card > *:nth-child(1) { animation-delay: 0.1s; }
+.success-card > *:nth-child(2) { animation-delay: 0.3s; }
+.success-card > *:nth-child(3) { animation-delay: 0.5s; }
+.success-card > *:nth-child(4) { animation-delay: 0.7s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .success-card {
+        padding: 30px 20px;
+    }
+    
+    .generate-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
