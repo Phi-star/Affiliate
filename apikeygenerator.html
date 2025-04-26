@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private API Key Generator</title>
+    <link rel="stylesheet" href="apikeygenerator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-card">
+            <div class="header">
+                <div class="api-icon">
+                    <i class="fas fa-key"></i>
+                    <i class="fas fa-link overlay-icon"></i>
+                </div>
+                <h1>API Key Generated!</h1>
+                <p class="subtitle">Your premium access key is ready</p>
+            </div>
+            
+            <div class="product-details">
+                <h2>Private API Key Generator</h2>
+                <p class="product-description">Unique keys for crypto and data services</p>
+                
+                <div class="key-display">
+                    <div class="key-container" id="generatedKey">
+                        <span id="keyValue">Click "Generate Key" below</span>
+                    </div>
+                    <button id="copyKeyBtn" class="copy-button">
+                        <i class="far fa-copy"></i> Copy Key
+                    </button>
+                </div>
+                
+                <div class="security-info">
+                    <div class="info-item">
+                        <i class="fas fa-user-lock"></i>
+                        <span>Unique Key</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>30-Day Validity</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>256-bit Encryption</span>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3>Usage Instructions</h3>
+                    <ol>
+                        <li>Copy your API key above</li>
+                        <li>Add to your application headers</li>
+                        <li>Format: <code>Authorization: Bearer [API_KEY]</code></li>
+                        <li>Start making authenticated requests</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="action-section">
+                <button id="generateKeyBtn" class="generate-button">
+                    <i class="fas fa-redo"></i> Generate New Key
+                </button>
+                <p class="note">All keys end with <strong>3446</strong> for verification</p>
+            </div>
+            
+            <div class="support">
+                <p>Need integration help? <a href="mailto:support@yourdomain.com">Contact our dev team</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="apikeygenerator.js"></script>
+</body>
+  </html>
