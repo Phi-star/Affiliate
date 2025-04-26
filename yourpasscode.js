@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Set WhatsApp link (replace with your actual link)
-    whatsappLink.href = https://chat.whatsapp.com/DnqYmVjesvcC7gywyRRqb8;
+    whatsappLink.href = whatsappGroupLink;
     
     // Add animation to passcode box on hover
     passcodeBox.addEventListener('mouseenter', function() {
