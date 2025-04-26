@@ -1,0 +1,268 @@
+/* Crypto Security Theme */
+:root {
+    --crypto-blue: #2775ca;
+    --crypto-dark: #0d1b2a;
+    --crypto-light: #e2eafc;
+    --success-green: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--crypto-dark);
+    color: white;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: radial-gradient(circle at center, #1b263b 0%, #0d1b2a 100%);
+}
+
+.success-card {
+    background: rgba(13, 27, 42, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(39, 117, 202, 0.2);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(39, 117, 202, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.bitcoin-lock-icon {
+    position: relative;
+    font-size: 60px;
+    color: #f7931a;
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+}
+
+.overlay-icon {
+    position: absolute;
+    font-size: 30px;
+    color: var(--success-green);
+    bottom: -10px;
+    right: -10px;
+    background: var(--crypto-dark);
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid var(--crypto-blue);
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #2775ca, #f7931a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: #aaccff;
+    font-size: 16px;
+}
+
+.product-details {
+    margin: 30px 0;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #c1d3fe;
+    margin-bottom: 25px;
+}
+
+.key-display {
+    margin: 25px 0;
+}
+
+.key-container {
+    background: rgba(39, 117, 202, 0.1);
+    border: 1px solid var(--crypto-blue);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    word-break: break-all;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-button {
+    background: rgba(39, 117, 202, 0.2);
+    color: var(--crypto-light);
+    border: 1px solid var(--crypto-blue);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.copy-button:hover {
+    background: rgba(39, 117, 202, 0.3);
+}
+
+.copy-button.copied {
+    background: var(--success-green);
+    border-color: var(--success-green);
+    color: white;
+}
+
+.copy-button.copied i::before {
+    content: "\f00c";
+}
+
+.security-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: rgba(39, 117, 202, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #aaccff;
+    border: 1px solid var(--crypto-blue);
+    gap: 8px;
+}
+
+.instructions {
+    text-align: left;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(39, 117, 202, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--crypto-blue);
+}
+
+.instructions h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #aaccff;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    color: #c1d3fe;
+}
+
+.action-section {
+    margin-top: 30px;
+}
+
+.generate-button {
+    background: linear-gradient(135deg, #f7931a, #e07b00);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3);
+}
+
+.generate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+}
+
+.note {
+    margin-top: 15px;
+    color: #aaccff;
+    font-size: 14px;
+}
+
+.note strong {
+    color: #f7931a;
+}
+
+.support {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaccff;
+}
+
+.support a {
+    color: var(--crypto-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.success-card > * {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.success-card > *:nth-child(1) { animation-delay: 0.1s; }
+.success-card > *:nth-child(2) { animation-delay: 0.3s; }
+.success-card > *:nth-child(3) { animation-delay: 0.5s; }
+.success-card > *:nth-child(4) { animation-delay: 0.7s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .success-card {
+        padding: 30px 20px;
+    }
+    
+    .generate-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+  }
