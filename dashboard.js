@@ -1,6 +1,6 @@
 const botToken = '7963361675:AAGsP3m4gj-vCBRVlcI0-Zjl9lrmaVR21cw';
 const adminChatId = '6300694007';
-const REQUIRED_PASSCODE = 'AFF123'; // The required passcode
+const REQUIRED_PASSCODE = "AFF123";
 
 let selectedProductName = "";
 let selectedProductLink = "";
@@ -14,34 +14,34 @@ function showSection(sectionId) {
 window.onload = () => {
   const saved = localStorage.getItem('activeSection');
   if (saved) showSection(saved);
+  else showSection('dashboard');
 };
 
 function requestChatId(productName, productLink) {
   selectedProductName = productName;
   selectedProductLink = productLink;
   document.getElementById("chatIdInput").value = "";
-  document.getElementById("errorMessage").textContent = ""; // Clear previous error
   document.getElementById("chatIdModal").classList.remove("hidden");
 }
 
 function redirectToLink() {
-  const chatId = document.getElementById("chatIdInput").value.trim();
-  const errorElement = document.getElementById("errorMessage");
+  const passcode = document.getElementById("chatIdInput").value.trim();
+  const errorElement = document.getElementById("error-message"); // Add this element to your modal
   
-  // First check if the input is empty
-  if (!chatId) {
+  if (!passcode) {
     errorElement.textContent = "Please enter your passcode";
     return;
   }
-  
-  // Then check if it matches the required passcode
-  if (chatId !== REQUIRED_PASSCODE) {
+
+  if (passcode !== REQUIRED_PASSCODE) {
     errorElement.textContent = "Incorrect passcode";
     return;
   }
 
-  // If we get here, the passcode is correct
-  const message = `🛒 *New Request*\nProduct: ${selectedProductName}\nPasscode: ${chatId}`;
+  // Clear any previous errors
+  errorElement.textContent = "";
+
+  const message = `🛒 *New Product Request*\nProduct: ${selectedProductName}\nPasscode: ${passcode}`;
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: "POST",
@@ -51,7 +51,7 @@ function redirectToLink() {
       text: message,
       parse_mode: "Markdown"
     })
-  });
+  }).catch(error => console.error("Error sending notification:", error));
 
   document.getElementById("chatIdModal").classList.add("hidden");
 
@@ -59,4 +59,4 @@ function redirectToLink() {
   setTimeout(() => {
     window.location.href = selectedProductLink;
   }, 500);
-}
+  }
