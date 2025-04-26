@@ -3,49 +3,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const passcodeBox = document.getElementById('passcodeBox');
     const whatsappLink = document.getElementById('whatsappLink');
     
-    // Set your WhatsApp group link here
-    const whatsappGroupLink = "#"; // Replace with actual link
-    
-    // Copy passcode functionality
+    // 1. Copy passcode functionality
     copyPasscodeBtn.addEventListener('click', function() {
         const passcode = document.getElementById('passcode').textContent;
-        
         navigator.clipboard.writeText(passcode).then(() => {
-            // Visual feedback
             copyPasscodeBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
             copyPasscodeBtn.classList.add('copied');
-            
             passcodeBox.style.animation = 'none';
             void passcodeBox.offsetWidth;
             passcodeBox.style.animation = 'pulse 0.5s';
-            
-            // Reset button after 2 seconds
             setTimeout(() => {
                 copyPasscodeBtn.innerHTML = '<i class="far fa-copy"></i> Copy Passcode';
                 copyPasscodeBtn.classList.remove('copied');
             }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy:', err);
-            copyPasscodeBtn.innerHTML = '<i class="fas fa-times"></i> Error';
-            setTimeout(() => {
-                copyPasscodeBtn.innerHTML = '<i class="far fa-copy"></i> Copy Passcode';
-            }, 2000);
         });
     });
-    
-    // Set WhatsApp link (replace with your actual link)
-    whatsappLink.href = whatsappGroupLink;
-    
-    // Add animation to passcode box on hover
-    passcodeBox.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 0 15px rgba(41, 98, 255, 0.3)';
+
+    // 2. Enhanced WhatsApp link handling
+    whatsappLink.addEventListener('click', function(e) {
+        // Open in new tab as fallback
+        if (!window.open(whatsappLink.href, '_blank')) {
+            // If popup blocked, redirect current page
+            window.location.href = whatsappLink.href;
+        }
+        e.preventDefault(); // Only if using custom tracking
     });
-    
-    passcodeBox.addEventListener('mouseleave', function() {
-        this.style.boxShadow = 'none';
+
+    // 3. Add visual feedback for links
+    whatsappLink.addEventListener('mousedown', function() {
+        this.style.transform = 'scale(0.98)';
     });
-    
-    // Keyframe animation for pulse effect
+    whatsappLink.addEventListener('mouseup', function() {
+        this.style.transform = 'scale(1)';
+    });
+
+    // 4. Keyframe animation for pulse effect
     const styleSheet = document.styleSheets[0];
     styleSheet.insertRule(`
         @keyframes pulse {
